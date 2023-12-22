@@ -77,3 +77,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
+void keyboard_post_init_user(void) {
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+    rgb_matrix_sethsv_noeeprom(HSV_OFF);
+}
+
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    switch(get_highest_layer(layer_state|default_layer_state)) {
+        case 1:
+             rgb_matrix_set_color(L1_LED_INDEX, RGB_WHITE);
+            break;
+        case 2:
+            rgb_matrix_set_color(L2_LED_INDEX, RGB_WHITE);
+            break;
+        case 3:
+            rgb_matrix_set_color(L3_LED_INDEX, RGB_WHITE);
+            break;
+       case 4:
+            rgb_matrix_set_color(L4_LED_INDEX, RGB_WHITE);
+            break;
+        default:
+            break;
+    }
+}

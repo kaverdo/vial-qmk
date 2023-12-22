@@ -28,3 +28,15 @@
 
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 15
+
+// not used
+#define L1_LED_INDEX CAPS_LOCK_LED_INDEX
+// numpad - S
+#define L2_LED_INDEX 17
+// symbols - *
+#define L3_LED_INDEX 8
+// F-row - F6
+#define L4_LED_INDEX 6
+
+
+#define DYNAMIC_TAPPING_TERM_INCREMENT 10
